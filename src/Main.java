@@ -8,13 +8,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        sequentialSearchTest();
-//        jumpSearchTest();
-//        binarySearchTest();
+        sequentialSearchTest();
+        jumpSearchTest();
+        binarySearchTest();
 
-//        selectionSortTest();
-//        inseertionSortTest();
-//        mergeSortTest();
+        selectionSortTest();
+        insertionSortTest();
+        mergeSortTest();
         mergeSortListTest();
     }
 

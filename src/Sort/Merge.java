@@ -16,7 +16,6 @@ public class Merge {
     }
 
     private static int[] merge(int[] arr1, int len1, int[] arr2, int len2) {
-        System.out.println("Merging: " + Arrays.toString(arr1) + Arrays.toString(arr2));
         int i = 0;
         int j = 0;
         int[] arr = new int[len1 + len2];
@@ -30,7 +29,6 @@ public class Merge {
                 arr[i + j] = arr1[i++];
         while (j < len2)
                 arr[i + j] = arr2[j++];
-        System.out.println("Merged: " + Arrays.toString(arr));
         return arr;
     }
 
