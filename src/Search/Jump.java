@@ -5,20 +5,16 @@ public class Jump {
     public static int search(int[] arr, int len, int key) {
         int jump = (int) Math.sqrt(len);    // 1
         int i = jump - 1;                   // 1
-        while (i < len - 1) {               // sqrt(n)
-            if (key > arr[i])               // sqrt(n)
+        while (i < len - 1 && key > arr[i]) {     // sqrt(n)
                 i += jump;                  // sqrt(n)
-            else
-                break;
         }
-        if (key == arr[i])                  // 1
-                    return i;               // 1
-        while (i % jump != 0) {             // sqrt(n)
-            i--;                            // sqrt(n)
-            if (key == arr[i])              // sqrt(n)
-                return i;
+        int j = i;                          // 1
+        while (j != i - jump) {             // sqrt(n)
+            if (key == arr[j])              // sqrt(n)
+                return j;                   // 0 lub 1
+            j--;                            // sqrt(n)
         }
-        return -1;
+        return -1;                          // 0 lub 1
     }
 }
 
@@ -26,7 +22,7 @@ public class Jump {
         ZŁOŻONOŚĆ
     O.D.: porównanie klucza z elementem ciągu
     R.D.: długość ciągu arr
-    W(n) = O(sqrt()))
+    W(n) = O(sqrt(n))
     A(n) = O(sqrt(n))
     S(n) = O(1)
 
