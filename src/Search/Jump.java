@@ -29,7 +29,9 @@ public class Jump {
         POPRAWNOŚĆ
     Właśność stopu: algorytm zatrzyma się, gdy obie pętle zatrzymają się. Pierwsza pętla najpóźniej zakończy działanie, gdy wartość i
     przekroczy len - 1, która z kolei jest skończoną, stałą liczbą. W każdej iteracji piewrszej pętli i zwiększane jest o
-    sqrt(len), przekroczy więc wartość len - 1 w skończonej liczbie iteracji.
+    sqrt(len), przekroczy więc wartość len - 1 w skończonej liczbie iteracji. Druga pętla zatrzyma się, gdy j osiągnie wartość i - jump.
+    Zmienna j inicjowana jest wartością i, a w każdej pętli zmniejszana jest o 1. W związku z tym musi zatrzymać się po skończonej ilości
+    wykonań.
 
     Poprawność częściowa:
     Niezmiennik 1. pętli: key >= arr[i - jump]
@@ -47,6 +49,6 @@ public class Jump {
     elementu. W drugim przypadku, gdy key > arr[i], to i` = i + jump. Ma to miejsce jednak tylko, gdy warunek key > arr[i]
     został spełniony, prawdziwe jest zatem stwierdzenie, że zbiór [0;i - jump) powiększony prawostronnie o jump również
     nie zawiera indeksu, pod którym jest key.
-   Wiedząc, że arr jest ciągiem niemalejącym, powiększenie wartości i o jump wynikowo da zbiór [0;
+    Wiedząc, że arr jest ciągiem niemalejącym, powiększenie wartości i o jump wynikowo da zbiór [0;
     Prawdziwe jest zatem stwierdzenie, że poszukiwanego indeksu (liczby całkowitej) j nie ma w zbiorze [0;i+1).
  */
