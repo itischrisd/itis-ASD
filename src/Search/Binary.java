@@ -32,8 +32,9 @@ public class Binary {
         POPRAWNOŚĆ
     Właśność stopu: algorytm zatrzyma się, gdy l > r (lub arr[m] == key). l i r inicjalizowane są jako skończone liczby
     naturalne. W każdej iteracji pętli jedna z nich nadpisywana połowę wartości między nimi +/- 1. Wartości ich więc
-    zbliżają się ku sobie w każdej iteracji o nie mniej niż 1, niezależlnie od sumy ich wartości. Wynika z tego, że ich wartości
-    muszą stać się równe w skończonej ilości iteracji, a w iteracji następnej po zrównaniu ich wartości l == r + 1 => l > 1.
+    zbliżają się ku sobie w każdej iteracji o nie mniej niż 1, niezależlnie od sumy ich wartości. Wynika z tego, że ich
+    wartości muszą stać się równe w skończonej ilości iteracji, a w iteracji następnej po zrównaniu ich wartości
+    l == r + 1 => l > 1.
 
     Poprawność częściowa:
     Niezmiennik pętli: Przed rozpoczęciem k-tej iteracji pętli wyszukiwania binarnego, elementy o indeksach mniejszych

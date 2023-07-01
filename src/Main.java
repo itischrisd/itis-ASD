@@ -11,6 +11,7 @@ public class Main {
         sequentialSearchTest();
         jumpSearchTest();
         binarySearchTest();
+        tournamentTest();
 
         selectionSortTest();
         insertionSortTest();
@@ -22,6 +23,7 @@ public class Main {
         int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
         int len = arr.length;
 
+        System.out.println("\nSequentaial search");
         for (int i : arr)
             System.out.println("Found " + i + " at index: " + Sequential.search(arr, len, i));
 
@@ -34,6 +36,7 @@ public class Main {
         int[] arr = new int[]{19, 24, 28, 32, 50, 51, 54, 69, 73, 79, 80, 83, 84, 92, 95};
         int len = arr.length;
 
+        System.out.println("\nJump search");
         for (int i : arr)
             System.out.println("Found " + i + " at index: " + Jump.search(arr, len, i));
 
@@ -46,12 +49,27 @@ public class Main {
         int[] arr = new int[]{19, 24, 28, 32, 50, 51, 54, 69, 73, 79, 80, 83, 84, 92, 95};
         int len = arr.length;
 
+        System.out.println("\nBinary search");
         for (int i : arr)
             System.out.println("Found " + i + " at index: " + Binary.search(arr, len, i));
 
         System.out.println("Not found 10, ret: " + Binary.search(arr, len, 10));
         System.out.println("Not found 52, ret: " + Binary.search(arr, len, 52));
         System.out.println("Not found 100, ret: " + Binary.search(arr, len, 100));
+    }
+
+    public static void tournamentTest() {
+        System.out.println("\nTournament algorithm");
+        int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
+        int len = arr.length;
+        int k = 2;
+    }
+
+    public static void hoareTest() {
+        System.out.println("\nHoare algorithm");
+        int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
+        int len = arr.length;
+        int k = 2;
     }
 
     private static void selectionSortTest() {
