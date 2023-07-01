@@ -1,4 +1,4 @@
-package org.s25692.asd;
+package DataStructure;
 
 public class StackArr<T> {
 

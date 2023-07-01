@@ -8,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        sequentialSearchTest();
+        sequentialSearchTest();
         jumpSearchTest();
-//        binarySearchTest();
+        binarySearchTest();
 
         selectionSortTest();
         insertionSortTest();
