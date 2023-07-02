@@ -36,3 +36,35 @@ public class Merge {
         return Arrays.copyOfRange(arr, l, r);
     }
 }
+
+/*
+        ZŁOŻONOŚĆ
+    O.D.: porównanie dwóch elementów ciągu
+    R.D.: długość ciągu arr
+    W(n) = O(nlog(n))
+    A(n) = O(nlog(n))
+    S(n) = O(n) (nie O(nlog(n)), ponieważ podtablice nie istnieją równocześnie, są zwalniane po wywołaniu rek.)
+
+        POPRAWNOŚĆ
+    Właśność stopu: Wywołania rekurencyjne zatrzymują się, gdy rozmiar tablicy wynosi 1. Na początku algorytmu, rozmiar
+    tablicy jest większy niż 1. W każdej rekurencyjnej iteracji, rozmiar tablicy jest dzielony na pół, aż osiągnie
+    rozmiar 1, wtedy algorytm zaczyna zamykać rekurencyjne wywołania. Zakańczając każdą parę rekurencyjnych wywołań,
+    algorytm łączy dwie podtablice w jedną o długości równej sumie długości podtablic (aż do osiągnięcia tablicy o
+    długości tablicy wejściowej). Stąd wynika, że algorytm zawsze zatrzymuje się.
+
+    Poprawność częściowa:
+    Niezmiennik pętli: Dla każdego indeksu j należącego do [0,i) wartość arr[j] jest na swoim właściwym miejscu w
+    posortowanej części tablicy arr[0:i).
+    1. Krok bazowy.
+    Przed rozpoczęciem sortowania przez scalanie, tablica o długości 1 jest uważana za posortowaną. Algorytm kończy
+    działanie bez żadnej operacji.
+    2. Założenie indukcyjne.
+    Przed rozpoczęciem każdej iteracji pętli, załóżmy, że podtablice, które mają być scalane, są posortowane.
+    3. Krok indukcyjny.
+    Teza indukcyjna:
+    Po zakończeniu iteracji pętli, mamy większą posortowaną tablicę, która jest wynikiem scalania podtablic.
+    Dowód indukcyjny:
+    Podczas scalania, elementy z dwóch podtablic są porównywane i umieszczane w odpowiedniej kolejności w wynikowej
+    tablicy. Algorytm zachowuje właściwość posortowania podtablic, ponieważ porównuje tylko elementy z jednej podtablicy
+    z drugą podtablicą, które są już posortowane.
+ */

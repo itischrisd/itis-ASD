@@ -12,19 +12,19 @@ public class Selection {
     }
 
     private static int indexOfMin(int[] arr, int i, int len) {
-        int min = i;                            // n
-        while (i < len) {                       // n^2
-            if (arr[min] > arr[i])              // n^2
-                min = i;                        // n^2
-            i++;                                // n^2
+        int min = i;                            // 1
+        while (i < len) {                       // n
+            if (arr[min] > arr[i])              // n
+                min = i;                        // n
+            i++;                                // n
         }
-        return min;                             // n
+        return min;                             // 1
     }
 
     private static void swap(int[] arr, int i1, int i2) {
-        int temp = arr[i1];                     // n
-        arr[i1] = arr[i2];                      // n
-        arr[i2] = temp;                         // n
+        int temp = arr[i1];                     // 1
+        arr[i1] = arr[i2];                      // 1
+        arr[i2] = temp;                         // 1
     }
 }
 
@@ -50,6 +50,10 @@ public class Selection {
     Załóżmy, że po k-tej iteracji pętli zewnętrznej, najmniejsze k elementów tablicy znajduje się na pozycjach arr[0] do
     arr[k-1] w kolejności niemalejącej.
     3. Krok indukcyjny.
+    Teza indukcyjna:
+    Po (k+1)-ej iteracji pętli zewnętrznej, najmniejsze k+1 elementów tablicy znajduje się na pozycjach arr[0] do
+    arr[k] w kolejności niemalejącej.
+    Dowód indukcyjny:
     Po (k+1)-ej iteracji pętli zewnętrznej, należy znaleźć najmniejszy element spośród arr[k+1:len) elementów. Wykonując
     operację swap(arr, i, min), znaleziony element zostanie przeniesiony na pozycję arr[i], a element na pozycji arr[i]
     zostanie przeniesiony na pozycję min. Zgodnie z założeniem indukcyjnym, najmniejsze k elementów znajduje się na
