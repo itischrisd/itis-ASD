@@ -62,7 +62,8 @@ public class Main {
         System.out.println("\nTournament algorithm");
         int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
         int len = arr.length;
-        int k = 2;
+        int sec = Tournament.second(arr, len);
+        System.out.println("Second minimum: " + sec);
     }
 
     public static void hoareTest() {
