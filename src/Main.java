@@ -1,4 +1,4 @@
-import Container.*;
+import Container.Node;
 import Search.*;
 import Sort.*;
 
@@ -12,18 +12,20 @@ public class Main {
         jumpSearchTest();
         binarySearchTest();
         tournamentTest();
+        hoareTest();
 
         selectionSortTest();
         insertionSortTest();
         mergeSortTest();
         mergeSortListTest();
+        quickSortTest();
     }
 
     private static void sequentialSearchTest() {
         int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
         int len = arr.length;
 
-        System.out.println("\nSequentaial search");
+        System.out.println("Sequentaial search");
         for (int i : arr)
             System.out.println("Found " + i + " at index: " + Sequential.search(arr, len, i));
 
@@ -61,8 +63,7 @@ public class Main {
     public static void tournamentTest() {
         System.out.println("\nTournament algorithm");
         int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
-        int len = arr.length;
-        int sec = Tournament.second(arr, len);
+        int sec = Tournament.second(arr, arr.length);
         System.out.println("Second minimum: " + sec);
     }
 
@@ -70,25 +71,27 @@ public class Main {
         System.out.println("\nHoare algorithm");
         int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
         int len = arr.length;
-        int k = 2;
+        for (int i = 0; i < len - 1; i++) {
+            System.out.println((i + 1) + " smallest: " + Hoare.kthSmallest(arr, len, i));
+        }
     }
 
     private static void selectionSortTest() {
         int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
         Selection.sort(arr, arr.length);
-        System.out.println("Selection sorted: " + Arrays.toString(arr));
+        System.out.println("\nSelection sorted: " + Arrays.toString(arr));
     }
 
     private static void insertionSortTest() {
         int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
         Insertion.sort(arr, arr.length);
-        System.out.println("Insertion sorted: " + Arrays.toString(arr));
+        System.out.println("\nInsertion sorted: " + Arrays.toString(arr));
     }
 
     private static void mergeSortTest() {
         int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
         arr = Merge.sort(arr, arr.length);
-        System.out.println("Merge sorted: " + Arrays.toString(arr));
+        System.out.println("\nMerge sorted: " + Arrays.toString(arr));
     }
 
     private static void mergeSortListTest() {
@@ -99,10 +102,16 @@ public class Main {
             curr.next = new Node<>(arr[i]);
             curr = curr.next;
         }
-        System.out.print("Unsorted list:\t\t");
+        System.out.print("\nUnsorted list:\t\t");
         MergeList.printList(list);
         list = MergeList.sort(list);
         System.out.print("\nMerge sorted list:\t");
         MergeList.printList(list);
+    }
+
+    private static void quickSortTest() {
+        int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
+        Quick.sort(arr, 0, arr.length - 1);
+        System.out.println("\n\nQuick sorted: " + Arrays.toString(arr));
     }
 }
