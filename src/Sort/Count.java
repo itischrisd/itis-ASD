@@ -1,0 +1,41 @@
+package Sort;
+
+import java.util.Arrays;
+
+public class Count {
+
+    public static int[] sort(int[] arr, int len) {
+        int count_len = maxValue(arr, len) + 1;
+        int[] counts = new int[count_len];
+        int[] result = new int[len];
+
+        for (int i = 0; i < len; i++) counts[arr[i]]++;
+        for (int i = 1; i < count_len; i++) counts[i] += counts[i - 1];
+        for (int i = len - 1; i >= 0; i--)
+            result[--counts[arr[i]]] = arr[i];
+
+        return result;
+    }
+
+    private static int maxValue(int[] arr, int len) {
+        return Arrays.stream(arr).max().orElse(0);
+    }
+}
+
+/*
+        ZŁOŻONOŚĆ
+    O.D.: przypisanie wartości w tablicy
+    R.D.: długość ciągu n, maksymalna wartość w ciągu m
+    W(n,m) = O(n+m)
+    A(n,m) = O(n+m)
+    S(n,m) = O(n+m)
+
+        POPRAWNOŚĆ
+    Właśność stopu:
+
+    Poprawność częściowa:
+    Niezmiennik pętli:
+    1. Krok bazowy.
+    2. Założenie indukcyjne.
+    3. Krok indukcyjny.
+ */

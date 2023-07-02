@@ -19,6 +19,8 @@ public class Main {
         mergeSortTest();
         mergeSortListTest();
         quickSortTest();
+        countSortTest();
+        radixSortTest();
     }
 
     private static void sequentialSearchTest() {
@@ -113,5 +115,17 @@ public class Main {
         int[] arr = new int[]{69, 32, 24, 83, 50, 54, 80, 79, 19, 95, 84, 73, 92, 51, 28};
         Quick.sort(arr, 0, arr.length - 1);
         System.out.println("\n\nQuick sorted: " + Arrays.toString(arr));
+    }
+
+    private static void countSortTest() {
+        int[] arr = new int[]{2, 2, 3, 0, 1, 0, 2, 4, 3, 0};
+        int[] sorted = Count.sort(arr, arr.length);
+        System.out.println("\nCount sorted: " + Arrays.toString(sorted));
+    }
+
+    private static void radixSortTest() {
+        int[] arr = new int[]{736, 124, 992, 384, 998, 111};
+        arr = Radix.sort(arr, arr.length);
+        System.out.println("\nRadix sorted: " + Arrays.toString(arr));
     }
 }
