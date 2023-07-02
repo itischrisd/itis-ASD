@@ -121,6 +121,9 @@ public class Main {
         int[] arr = new int[]{2, 2, 3, 0, 1, 0, 2, 4, 3, 0};
         int[] sorted = Count.sort(arr, arr.length);
         System.out.println("\nCount sorted: " + Arrays.toString(sorted));
+        int[] arr2 = new int[]{2, -2, 3, 0, -1, 0, 2, 4, 3, 0};
+        int[] sorted2 = Count.sortOnIntegers(arr2, arr2.length);
+        System.out.println("Count sorted: " + Arrays.toString(sorted2));
     }
 
     private static void radixSortTest() {

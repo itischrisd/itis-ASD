@@ -17,8 +17,26 @@ public class Count {
         return result;
     }
 
+    public static int[] sortOnIntegers(int[] arr, int len) {
+        int min = minValue(arr, len);
+        int count_len = maxValue(arr, len) + 1 + Math.abs(min);
+        int[] counts = new int[count_len];
+        int[] result = new int[len];
+
+        for (int i = 0; i < len; i++) counts[arr[i] - min]++;
+        for (int i = 1; i < count_len; i++) counts[i] += counts[i - 1];
+        for (int i = len - 1; i >= 0; i--)
+            result[--counts[arr[i] - min]] = arr[i];
+
+        return result;
+    }
+
     private static int maxValue(int[] arr, int len) {
         return Arrays.stream(arr).max().orElse(0);
+    }
+
+    private static int minValue(int[] arr, int len) {
+        return Arrays.stream(arr).min().orElse(0);
     }
 }
 
