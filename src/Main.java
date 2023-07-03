@@ -1,4 +1,5 @@
-import Container.Node;
+import DataStructure.DLList;
+import DataStructure.Node;
 import Search.*;
 import Sort.*;
 
@@ -21,6 +22,8 @@ public class Main {
         quickSortTest();
         countSortTest();
         radixSortTest();
+
+        DLListTest();
     }
 
     private static void sequentialSearchTest() {
@@ -130,5 +133,84 @@ public class Main {
         int[] arr = new int[]{736, 124, 992, 384, 998, 111};
         arr = Radix.sort(arr, arr.length);
         System.out.println("\nRadix sorted: " + Arrays.toString(arr));
+    }
+
+    private static void DLListTest() {
+        DLList<Integer> list = new DLList<>();
+
+        System.out.println("\nDoubly Linked List");
+        System.out.println("isEmpty: " + list.isEmpty());
+
+        list.pushBack(1);
+        list.pushBack(2);
+        list.pushBack(3);
+
+        System.out.println("first: " + list.first());
+
+        System.out.println("last: " + list.last());
+
+        System.out.println("Lista:");
+        list.display();
+
+        list.insertAfter(4, 2);
+        list.insertAfter(5, 3);
+
+        System.out.println("Zmodyfikowana lista:");
+        list.display();
+
+        list.insertBefore(6, 1);
+        list.insertBefore(7, 4);
+
+        System.out.println("Zmodyfikowana lista:");
+        list.display();
+
+        list.moveAfter(4, 6);
+
+        System.out.println("Zmodyfikowana lista:");
+        list.display();
+
+        list.moveBefore(3, 7);
+
+        System.out.println("Zmodyfikowana lista:");
+        list.display();
+
+        list.removeAfter(2);
+
+        System.out.println("Zmodyfikowana lista:");
+        list.display();
+
+        list.removeBefore(6);
+
+        System.out.println("Zmodyfikowana lista:");
+        list.display();
+
+        int poppedBack = list.popBack();
+        System.out.println("poppedBack: " + poppedBack);
+
+        int poppedFront = list.popFront();
+        System.out.println("poppedFront: " + poppedFront);
+
+        System.out.println("Zmodyfikowana lista:");
+        list.display();
+
+        int value = 2;
+        System.out.println("Następny element po " + value + ": " + list.findNext(value));
+
+        DLList<Integer> newList = new DLList<>();
+        newList.pushBack(4);
+        newList.pushBack(5);
+        newList.pushBack(6);
+
+        System.out.println("Połączona lista:");
+        list.concat(newList);
+        list.display();
+
+        System.out.println("findNext: " + list.findNext(2));
+
+        System.out.println("findPrev: " + list.findPrev(2));
+
+        System.out.println("Lista:");
+        list.display();
+        System.out.println("size: " + list.size);
     }
 }

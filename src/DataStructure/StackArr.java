@@ -10,11 +10,13 @@ public class StackArr<T> {
             throw new ArrayIndexOutOfBoundsException();
         arr[++top] = val;
     }
+
     T top() {
         if (top == -1)
             throw new ArrayIndexOutOfBoundsException();
         return arr[top];
     }
+
     T pop() {
         if (top == -1)
             throw new ArrayIndexOutOfBoundsException();

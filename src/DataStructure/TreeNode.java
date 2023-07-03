@@ -1,4 +1,4 @@
-package Container;
+package DataStructure;
 
 public class TreeNode<T> {
     public Node<T> parent = null;

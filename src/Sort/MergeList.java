@@ -1,6 +1,6 @@
 package Sort;
 
-import Container.Node;
+import DataStructure.Node;
 
 public class MergeList {
 

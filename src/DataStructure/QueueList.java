@@ -1,7 +1,5 @@
 package DataStructure;
 
-import Container.Node;
-
 public class QueueList<T> {
 
     Node<T> front;
@@ -11,7 +9,7 @@ public class QueueList<T> {
         if (front == null)
             front = new Node<>(val);
         Node<T> curr = front;
-        while(curr.next != null)
+        while (curr.next != null)
             curr = curr.next;
         curr.next = new Node<>(val);
     }

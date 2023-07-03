@@ -1,7 +1,5 @@
 package DataStructure;
 
-import Container.Node;
-
 import java.util.EmptyStackException;
 
 public class StackList<T> {
