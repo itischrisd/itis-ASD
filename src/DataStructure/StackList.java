@@ -3,6 +3,7 @@ package DataStructure;
 import java.util.EmptyStackException;
 
 public class StackList<T> {
+
     Node<T> top;
 
     void push(T val) {

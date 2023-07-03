@@ -1,6 +1,6 @@
 package DataStructure;
 
-public class StackArr<T> {
+public class StackArray<T> {
 
     int top = -1;
     T[] arr;
