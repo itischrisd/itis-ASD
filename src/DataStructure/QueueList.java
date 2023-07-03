@@ -28,4 +28,18 @@ public class QueueList<T> {
         front = front.next;
         return to_ret;
     }
+
+    void reverse() {
+        Node<T> prev = null;
+        Node<T> curr = front;
+        Node<T> next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        tail = front;
+        front = prev;
+    }
 }
