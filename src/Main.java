@@ -1,3 +1,4 @@
+import DataStructure.PriorityQueueBinaryHeap;
 import DataStructure.DLList;
 import DataStructure.Node;
 import Search.*;
@@ -24,6 +25,7 @@ public class Main {
         radixSortTest();
 
         DLListTest();
+        priorityQueueTest();
     }
 
     private static void sequentialSearchTest() {
@@ -212,5 +214,37 @@ public class Main {
         System.out.println("Lista:");
         list.display();
         System.out.println("size: " + list.size);
+    }
+
+    private static void priorityQueueTest() {
+        System.out.println("\nPriority Queue on Binary Heap");
+
+        PriorityQueueBinaryHeap heap = new PriorityQueueBinaryHeap();
+
+        int[] arr = {5, 3, 8, 2, 7, 1, 6, 4};
+        heap.construct(arr);
+
+        System.out.println("Constructed Heap:");
+        heap.print();
+
+        heap.fastConstruct(arr);
+
+        System.out.println("Fast Constructed Heap:");
+        heap.print();
+
+        heap.insert(9);
+        heap.insert(0);
+
+        System.out.println("Inserted 9, 0:");
+        heap.print();
+
+        int min = heap.findMin();
+        System.out.println("Minimum: " + min);
+
+        int delMin = heap.delMin();
+        System.out.println("Deleted minimum: " + delMin);
+
+        System.out.println("Heap after insert and delete:");
+        heap.print();
     }
 }

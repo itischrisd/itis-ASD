@@ -1,9 +1,9 @@
 package DataStructure;
 
 public class TreeNode<T> {
-    public Node<T> parent = null;
-    public Node<T> left = null;
-    public Node<T> right = null;
+    public TreeNode<T> parent = null;
+    public TreeNode<T> left = null;
+    public TreeNode<T> right = null;
     public T value;
 
     public TreeNode(T elem) {
