@@ -54,32 +54,32 @@ public class PriorityQueueBinaryHeap {
     }
 
     public void print() {
-    int height = (int) (Math.log(heap.size() - 1) / Math.log(2));
-    int maxWidth = (int) Math.pow(2, height) * 3;
+        int height = (int) (Math.log(heap.size() - 1) / Math.log(2));
+        int maxWidth = (int) Math.pow(2, height) * 3;
 
-    for (int i = 1, level = 0; i < heap.size(); i++) {
-        if (i == Math.pow(2, level)) {
-            System.out.println();
-            printSpaces(maxWidth - (int) Math.pow(2, level) * 3 - 8);
-            level++;
+        for (int i = 1, level = 0; i < heap.size(); i++) {
+            if (i == Math.pow(2, level)) {
+                System.out.println();
+                printSpaces(maxWidth - (int) Math.pow(2, level) * 3 - 8);
+                level++;
+            }
+            if (level == 4) {
+                System.out.printf("%-1d", heap.get(i));
+            } else {
+                System.out.printf("%-3d", heap.get(i));
+            }
+            printSpaces(3);
         }
-        if (level == 4) { // Dodajemy warunek dla czwartego wiersza
-            System.out.printf("%-1d", heap.get(i)); // Przesunięcie czwartego wiersza
-        } else {
-            System.out.printf("%-3d", heap.get(i));
+        System.out.println();
+    }
+
+    private void printSpaces(int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.print(" ");
         }
-        printSpaces(3);
     }
-    System.out.println();
-}
 
-private void printSpaces(int count) {
-    for (int i = 0; i < count; i++) {
-        System.out.print(" ");
-    }
-}
-
-    private void upheap(int index) {
+    void upheap(int index) {
         int key = heap.get(index);
         int parent = index / 2;
         while (parent > 0 && heap.get(parent) > key) {
@@ -90,11 +90,11 @@ private void printSpaces(int count) {
         heap.set(index, key);
     }
 
-    private void downheap(int index) {
+    void downheap(int index) {
         int key = heap.get(index);
         int size = heap.size();
 
-        while (index < size / 2) {
+        while (index * 2 < size) {
             int child = 2 * index;
             if (child + 1 < size && heap.get(child + 1) < heap.get(child)) {
                 child++;

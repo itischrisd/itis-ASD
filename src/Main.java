@@ -1,6 +1,4 @@
-import DataStructure.PriorityQueueBinaryHeap;
-import DataStructure.DLList;
-import DataStructure.Node;
+import DataStructure.*;
 import Search.*;
 import Sort.*;
 
@@ -26,6 +24,9 @@ public class Main {
 
         DLListTest();
         priorityQueueTest();
+        dynamicPriorityQueueTest();
+        mergeablePriorityQueueTest();
+        maxPriorityQueueTest();
     }
 
     private static void sequentialSearchTest() {
@@ -245,6 +246,85 @@ public class Main {
         System.out.println("Deleted minimum: " + delMin);
 
         System.out.println("Heap after insert and delete:");
+        heap.print();
+    }
+
+    private static void dynamicPriorityQueueTest() {
+        System.out.println("\nDynamic Priority Queue");
+
+        DynamicPriorityQueue queue = new DynamicPriorityQueue();
+
+        queue.insert(5);
+        queue.insert(2);
+        queue.insert(8);
+        queue.insert(3);
+        queue.insert(6);
+
+        System.out.println("Constructed Heap:");
+        queue.print();
+
+        queue.decreaseKey(3, 1);
+
+        System.out.println("Heap after decreasing key:");
+        queue.print();
+
+        queue.delete(2);
+
+        System.out.println("Heap after deleting element:");
+        queue.print();
+    }
+
+    private static void mergeablePriorityQueueTest() {
+        System.out.println("\nMergeable Priority Queue");
+
+        MergeablePriorityQueue queue = new MergeablePriorityQueue();
+
+        queue.insert(5);
+        queue.insert(2);
+        queue.insert(8);
+        queue.insert(3);
+        queue.insert(6);
+
+        MergeablePriorityQueue otherQueue = new MergeablePriorityQueue();
+        otherQueue.insert(3);
+        otherQueue.insert(7);
+        otherQueue.insert(9);
+
+        queue.merge(otherQueue);
+
+        System.out.println("Heap after merging:");
+        queue.print();
+    }
+
+    private static void maxPriorityQueueTest() {
+        System.out.println("\nMax Priority Queue on Binary Heap");
+
+        MaxPriorityQueue heap = new MaxPriorityQueue();
+
+        int[] arr = {5, 3, 8, 2, 7, 1, 6, 4};
+        heap.construct(arr);
+
+        System.out.println("Constructed Max Heap:");
+        heap.print();
+
+        heap.fastConstruct(arr);
+
+        System.out.println("Fast Constructed Max Heap:");
+        heap.print();
+
+        heap.insert(9);
+        heap.insert(0);
+
+        System.out.println("Inserted 9, 0:");
+        heap.print();
+
+        int min = heap.findMin();
+        System.out.println("Maximum: " + min);
+
+        int delMin = heap.delMin();
+        System.out.println("Deleted maximum: " + delMin);
+
+        System.out.println("Max Heap after insert and delete:");
         heap.print();
     }
 }
