@@ -14,12 +14,22 @@ public class QueueList<T> {
             tail = tail.next;
         }
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     T front() {
         if (front == null)
             throw new RuntimeException("Queue is empty!");
         return front.value;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     T out() {
         if (front == null)
@@ -28,6 +38,11 @@ public class QueueList<T> {
         front = front.next;
         return to_ret;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     void reverse() {
         Node<T> prev = null;
@@ -42,4 +57,11 @@ public class QueueList<T> {
         tail = front;
         front = prev;
     }
+    /*
+    O.D.: pobranie wskaźnika do elementu
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 }

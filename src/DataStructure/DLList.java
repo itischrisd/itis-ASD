@@ -2,9 +2,9 @@ package DataStructure;
 
 public class DLList<T> {
 
+    public int size = 0;
     private DLNode<T> head = null;
     private DLNode<T> tail = null;
-    public int size = 0;
 
     public boolean isEmpty() {
         return head == null;
@@ -15,12 +15,22 @@ public class DLList<T> {
             throw new IllegalStateException("List is empty");
         return head.value;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     public T last() {
         if (tail == null)
             throw new IllegalStateException("List is empty");
         return tail.value;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     public void insertAfter(T value, T after) {
         DLNode<T> temp = getPtr(after);
@@ -37,6 +47,13 @@ public class DLList<T> {
 
         size++;
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     public void insertBefore(T value, T before) {
         DLNode<T> temp = getPtr(before);
@@ -53,6 +70,13 @@ public class DLList<T> {
 
         size++;
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     public void moveAfter(T value, T after) {
         DLNode<T> temp = getPtr(after);
@@ -73,6 +97,13 @@ public class DLList<T> {
         temp.next = toMove;
         toMove.prev = temp;
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     public void moveBefore(T value, T before) {
         DLNode<T> temp = getPtr(before);
@@ -95,6 +126,13 @@ public class DLList<T> {
         toMove.next = temp;
         temp.prev = toMove;
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     public void removeAfter(T value) {
         DLNode<T> temp = getPtr(value);
@@ -109,6 +147,13 @@ public class DLList<T> {
             size--;
         }
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     public void removeBefore(T value) {
         DLNode<T> temp = getPtr(value);
@@ -123,6 +168,13 @@ public class DLList<T> {
             size--;
         }
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     public void pushBack(T value) {
         DLNode<T> temp = new DLNode<>(value);
@@ -137,6 +189,11 @@ public class DLList<T> {
 
         size++;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     public void pushFront(T value) {
         DLNode<T> temp = new DLNode<>(value);
@@ -151,11 +208,15 @@ public class DLList<T> {
 
         size++;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     public T popBack() {
         if (tail == null)
             throw new IllegalStateException("List is empty");
-
 
         T toRet = tail.value;
 
@@ -171,6 +232,11 @@ public class DLList<T> {
 
         return toRet;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     public T popFront() {
         if (head == null)
@@ -190,6 +256,11 @@ public class DLList<T> {
 
         return toRet;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     public void concat(DLList<T> toConcat) {
         if (toConcat.head != null) {
@@ -202,6 +273,11 @@ public class DLList<T> {
             size += toConcat.size;
         }
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     public void splice(DLNode<T> a, DLNode<T> b, DLNode<T> t) {
         DLNode<T> aPrev = a.prev;
@@ -225,6 +301,12 @@ public class DLList<T> {
 
         updateSize();
     }
+    /*
+    TYLKO JEŚLI POSIADAMY WSKAŹNIKI
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     public T findNext(T value) {
         DLNode<T> temp = getPtr(value);
@@ -234,6 +316,13 @@ public class DLList<T> {
 
         return temp.next.value;
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     public T findPrev(T value) {
         DLNode<T> temp = getPtr(value);
@@ -243,6 +332,13 @@ public class DLList<T> {
 
         return temp.prev.value;
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     public void display() {
         DLNode<T> node = head;
@@ -252,6 +348,13 @@ public class DLList<T> {
         }
         System.out.println();
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     private DLNode<T> getPtr(T value) {
         DLNode<T> temp = head;
@@ -262,6 +365,13 @@ public class DLList<T> {
         }
         throw new IllegalArgumentException("Value does not exist in the list");
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     private void updateSize() {
         size = 0;
@@ -271,4 +381,11 @@ public class DLList<T> {
             temp = temp.next;
         }
     }
+    /*
+    O.D.: pobieranie wskaźnika do węzła
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 }

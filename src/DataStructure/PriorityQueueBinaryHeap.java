@@ -11,6 +11,11 @@ public class PriorityQueueBinaryHeap {
         heap = new ArrayList<>();
         heap.add(-1);
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     public void construct(int[] arr) {
         heap.clear();
@@ -22,6 +27,13 @@ public class PriorityQueueBinaryHeap {
             i++;
         }
     }
+    /*
+    O.D.: porównanie dwóch elementów
+    R.D.: długość ciągu
+    W(n) = O(nlog(n))
+    A(n) = O(nlog(n))
+    S(n) = O(n)
+    */
 
     public void fastConstruct(int[] arr) {
         heap.clear();
@@ -30,18 +42,37 @@ public class PriorityQueueBinaryHeap {
         for (int j = heap.size() / 2; j > 0; j--)
             downheap(j);
     }
+    /*
+    O.D.: porównanie dwóch elementów
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(n)
+    */
 
     public int insert(int value) {
         heap.add(value);
         upheap(heap.size() - 1);
         return heap.indexOf(value);
     }
+    /*
+    O.D.: porównanie dwóch elementów
+    R.D.: długość ciągu
+    W(n) = O(log(n))
+    A(n) = O(log(n))
+    S(n) = O(1)
+    */
 
     public int findMin() {
         if (heap.isEmpty())
             throw new IllegalStateException("Heap is empty.");
         return heap.get(1);
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     public int delMin() {
         if (heap.isEmpty())
@@ -52,6 +83,13 @@ public class PriorityQueueBinaryHeap {
         downheap(1);
         return toRet;
     }
+    /*
+    O.D.: porównanie dwóch elementów
+    R.D.: długość ciągu
+    W(n) = O(log(n))
+    A(n) = O(log(n))
+    S(n) = O(1)
+    */
 
     public void print() {
         int height = (int) (Math.log(heap.size() - 1) / Math.log(2));
@@ -72,6 +110,13 @@ public class PriorityQueueBinaryHeap {
         }
         System.out.println();
     }
+    /*
+    O.D.: pobranie elementu ciągu
+    R.D.: długość ciągu
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(1)
+    */
 
     private void printSpaces(int count) {
         for (int i = 0; i < count; i++) {
@@ -89,6 +134,13 @@ public class PriorityQueueBinaryHeap {
         }
         heap.set(index, key);
     }
+    /*
+    O.D.: porównanie dwóch elementów
+    R.D.: długość ciągu
+    W(n) = O(log(n))
+    A(n) = O(log(n))
+    S(n) = O(1)
+    */
 
     void downheap(int index) {
         int key = heap.get(index);
@@ -108,4 +160,11 @@ public class PriorityQueueBinaryHeap {
         }
         heap.set(index, key);
     }
+    /*
+    O.D.: porównanie dwóch elementów
+    R.D.: długość ciągu
+    W(n) = O(log(n))
+    A(n) = O(log(n))
+    S(n) = O(1)
+    */
 }

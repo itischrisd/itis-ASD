@@ -318,10 +318,10 @@ public class Main {
         System.out.println("Inserted 9, 0:");
         heap.print();
 
-        int min = heap.findMin();
+        int min = heap.findMax();
         System.out.println("Maximum: " + min);
 
-        int delMin = heap.delMin();
+        int delMin = heap.delMax();
         System.out.println("Deleted maximum: " + delMin);
 
         System.out.println("Max Heap after insert and delete:");

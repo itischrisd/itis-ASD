@@ -10,16 +10,31 @@ public class StackArray<T> {
             throw new ArrayIndexOutOfBoundsException();
         arr[++top] = val;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     T top() {
         if (top == -1)
             throw new ArrayIndexOutOfBoundsException();
         return arr[top];
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     T pop() {
         if (top == -1)
             throw new ArrayIndexOutOfBoundsException();
         return arr[top--];
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 }

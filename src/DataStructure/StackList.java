@@ -11,12 +11,22 @@ public class StackList<T> {
         newTop.next = top;
         top = newTop;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     T top() {
         if (top == null)
             throw new EmptyStackException();
         return top.value;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 
     T pop() {
         if (top == null)
@@ -25,4 +35,9 @@ public class StackList<T> {
         top = top.next;
         return toRet.value;
     }
+    /*
+    W(n) = O(1)
+    A(n) = O(1)
+    S(n) = O(1)
+    */
 }

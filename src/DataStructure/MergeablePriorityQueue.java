@@ -10,4 +10,11 @@ public class MergeablePriorityQueue extends DynamicPriorityQueue {
             downheap(i);
         }
     }
+    /*
+    O.D.: porównanie dwóch elementów
+    R.D.: długość ciągu wynikowego
+    W(n) = O(n)
+    A(n) = O(n)
+    S(n) = O(n)
+    */
 }

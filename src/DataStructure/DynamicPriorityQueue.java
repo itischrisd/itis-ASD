@@ -13,6 +13,13 @@ public class DynamicPriorityQueue extends PriorityQueueBinaryHeap {
         heap.set(index, newPriority);
         upheap(index);
     }
+    /*
+    O.D.: porównanie dwóch elementów
+    R.D.: długość ciągu
+    W(n) = O(log(n))
+    A(n) = O(log(n))
+    S(n) = O(1)
+    */
 
     public void delete(int index) {
         if (index < 1 || index >= heap.size())
@@ -21,4 +28,11 @@ public class DynamicPriorityQueue extends PriorityQueueBinaryHeap {
         decreaseKey(index, -1);
         delMin();
     }
+    /*
+    O.D.: porównanie dwóch elementów
+    R.D.: długość ciągu
+    W(n) = O(log(n))
+    A(n) = O(log(n))
+    S(n) = O(1)
+    */
 }
