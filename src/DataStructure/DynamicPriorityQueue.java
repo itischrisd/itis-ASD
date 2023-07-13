@@ -1,6 +1,6 @@
 package DataStructure;
 
-public class DynamicPriorityQueue extends PriorityQueueBinaryHeap {
+public class DynamicPriorityQueue extends PriorityQueue {
 
     public void decreaseKey(int index, int newPriority) {
         if (index < 1 || index >= heap.size())

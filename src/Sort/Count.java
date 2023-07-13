@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Count {
 
     public static int[] sort(int[] arr, int len) {
-        int count_len = maxValue(arr, len) + 1;
+        int count_len = maxValue(arr) + 1;
         int[] counts = new int[count_len];
         int[] result = new int[len];
 
@@ -18,8 +18,8 @@ public class Count {
     }
 
     public static int[] sortOnIntegers(int[] arr, int len) {
-        int min = minValue(arr, len);
-        int count_len = maxValue(arr, len) + 1 + Math.abs(min);
+        int min = minValue(arr);
+        int count_len = maxValue(arr) + 1 + Math.abs(min);
         int[] counts = new int[count_len];
         int[] result = new int[len];
 
@@ -31,11 +31,11 @@ public class Count {
         return result;
     }
 
-    private static int maxValue(int[] arr, int len) {
+    private static int maxValue(int[] arr) {
         return Arrays.stream(arr).max().orElse(0);
     }
 
-    private static int minValue(int[] arr, int len) {
+    private static int minValue(int[] arr) {
         return Arrays.stream(arr).min().orElse(0);
     }
 }
@@ -47,13 +47,4 @@ public class Count {
     W(n,m) = O(n+m)
     A(n,m) = O(n+m)
     S(n,m) = O(n+m)
-
-        POPRAWNOŚĆ
-    Właśność stopu:
-
-    Poprawność częściowa:
-    Niezmiennik pętli:
-    1. Krok bazowy.
-    2. Założenie indukcyjne.
-    3. Krok indukcyjny.
  */

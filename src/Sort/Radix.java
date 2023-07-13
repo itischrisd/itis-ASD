@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Radix {
 
     public static int[] sort(int[] arr, int len) {
-        int m = maxValue(arr, len);
+        int m = maxValue(arr);
         for (int exp = 1; m / exp > 0; exp *= 10) {
             arr = countSortWithExp(arr, len, exp);
         }
@@ -29,7 +29,7 @@ public class Radix {
         return result;
     }
 
-    private static int maxValue(int[] arr, int len) {
+    private static int maxValue(int[] arr) {
         return Arrays.stream(arr).max().orElse(0);
     }
 }
@@ -41,13 +41,4 @@ public class Radix {
     W(n,m) = O(d * (n + k))
     A(n,m) = O(d * (n + k))
     S(n,m) = O(n + k)
-
-        POPRAWNOŚĆ
-    Właśność stopu:
-
-    Poprawność częściowa:
-    Niezmiennik pętli:
-    1. Krok bazowy.
-    2. Założenie indukcyjne.
-    3. Krok indukcyjny.
  */

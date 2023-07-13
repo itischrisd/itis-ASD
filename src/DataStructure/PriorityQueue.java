@@ -3,11 +3,11 @@ package DataStructure;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PriorityQueueBinaryHeap {
+public class PriorityQueue {
 
     List<Integer> heap;
 
-    public PriorityQueueBinaryHeap() {
+    public PriorityQueue() {
         heap = new ArrayList<>();
         heap.add(-1);
     }

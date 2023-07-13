@@ -2,7 +2,7 @@ package DataStructure;
 
 public class MergeablePriorityQueue extends DynamicPriorityQueue {
 
-    public void merge(PriorityQueueBinaryHeap otherPQ) {
+    public void merge(PriorityQueue otherPQ) {
         otherPQ.heap.remove(0);
         heap.addAll(otherPQ.heap);
         int size = heap.size();

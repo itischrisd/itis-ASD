@@ -220,7 +220,7 @@ public class Main {
     private static void priorityQueueTest() {
         System.out.println("\nPriority Queue on Binary Heap");
 
-        PriorityQueueBinaryHeap heap = new PriorityQueueBinaryHeap();
+        PriorityQueue heap = new PriorityQueue();
 
         int[] arr = {5, 3, 8, 2, 7, 1, 6, 4};
         heap.construct(arr);
