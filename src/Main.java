@@ -27,6 +27,8 @@ public class Main {
         dynamicPriorityQueueTest();
         mergeablePriorityQueueTest();
         maxPriorityQueueTest();
+        binarySearchTreeTest();
+        AVLTreeTest();
     }
 
     private static void sequentialSearchTest() {
@@ -326,5 +328,78 @@ public class Main {
 
         System.out.println("Max Heap after insert and delete:");
         heap.print();
+    }
+
+    private static void binarySearchTreeTest() {
+        System.out.println("\nBinary Search Tree:");
+
+        BinarySearchTree bst = new BinarySearchTree();
+
+        bst.insert(5);
+        bst.insert(3);
+        bst.insert(7);
+        bst.insert(2);
+        bst.insert(4);
+        bst.insert(6);
+        bst.insert(8);
+
+        bst.print();
+
+        int searchKey = 4;
+        int searchResult = bst.search(searchKey);
+        System.out.println("Search result for key " + searchKey + ": " + searchResult);
+
+        int deleteKey = 7;
+        bst.delete(deleteKey);
+        System.out.println("Deleted key: " + deleteKey);
+
+        bst.print();
+
+        int minimumValue = bst.minimum();
+        System.out.println("Minimum value: " + minimumValue);
+
+        int maximumValue = bst.maximum();
+        System.out.println("Maximum value: " + maximumValue);
+    }
+
+    public static void AVLTreeTest() {
+        System.out.println("\nAVL Tree:");
+
+        AVLTree avlTree = new AVLTree();
+
+        avlTree.insert(10);
+        avlTree.insert(20);
+        avlTree.insert(30);
+        avlTree.insert(40);
+        avlTree.insert(50);
+
+        System.out.println("Inorder traversal of AVL tree:");
+        avlTree.print();
+        System.out.println();
+
+        int key = 30;
+        if (avlTree.search(key)) {
+            System.out.println("Key " + key + " found in the AVL tree.");
+        } else {
+            System.out.println("Key " + key + " not found in the AVL tree.");
+        }
+
+        key = 60;
+        if (avlTree.search(key)) {
+            System.out.println("Key " + key + " found in the AVL tree.");
+        } else {
+            System.out.println("Key " + key + " not found in the AVL tree.");
+        }
+
+        key = 30;
+        avlTree.delete(key);
+
+        System.out.println("Inorder traversal after deletion:");
+        avlTree.print();
+        System.out.println();
+
+        System.out.println("Minimum value in the AVL tree: " + avlTree.minimum());
+        System.out.println("Maximum value in the AVL tree: " + avlTree.maximum());
+
     }
 }
